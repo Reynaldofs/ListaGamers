@@ -13,7 +13,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "tb_game")
-public class Gamer implements Serializable {
+public class Game implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -33,11 +33,11 @@ public class Gamer implements Serializable {
 	@Column(columnDefinition = "TEXT")
 	private String longDescription;
 	
-	public Gamer() {
+	public Game() {
 		
 	}
 
-	public Gamer(Long id, String title, Integer year, String genre, String platforms, Double score, String imgUrl,
+	public Game(Long id, String title, Integer year, String genre, String platforms, Double score, String imgUrl,
 			String shortDescription, String longDescription) {
 		this.id = id;
 		this.title = title;
@@ -135,7 +135,7 @@ public class Gamer implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Gamer other = (Gamer) obj;
+		Game other = (Game) obj;
 		return Objects.equals(id, other.id);
 	}
 
